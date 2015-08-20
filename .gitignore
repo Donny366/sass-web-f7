@@ -1,0 +1,11 @@
+archive
+node_modules
+.idea
+dist
+Framework7
+bower
+src/sass/sassDocs
+src/js/**/*
+src/sass
+src/framework7
+npm-debug.log

@@ -1,0 +1,29 @@
+{
+    "name": "sass-web",
+    "version": "1.0.0",
+    "name": "sass-web-f7",
+    "version": "0.0.0",
+    "authors": [
+        "xiaoming.gong <550843110@qq.com>"
+    ],
+    "description": "html pc browser ie7",
+    "keywords": [
+        "html",
+        "ie7",
+        "sass",
+        "jquery"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/AnyGong/sass-web-f7",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "devDependencies": {
+        "sass-f7":"https://github.com/AnyGong/sass-f7.git",
+        "requirejs":"2.1.20"
+    }
+}
