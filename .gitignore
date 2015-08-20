@@ -7,5 +7,6 @@ bower
 src/sass/sassDocs
 src/js/**/*
 src/sass
-src/framework7
+src/framework7/img
+src/framework7/js
 npm-debug.log
