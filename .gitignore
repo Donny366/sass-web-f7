@@ -4,8 +4,6 @@ node_modules
 dist
 Framework7
 bower
-src/sass/sassDocs
-src/js/**/*
 src/sass
 src/framework7/img
 src/framework7/js
