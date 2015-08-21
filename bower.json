@@ -23,7 +23,7 @@
         "tests"
     ],
     "devDependencies": {
-        "sass-f7":"https://github.com/AnyGong/sass-f7.git",
+        "sass-f7":"https://github.com/AnyGong/sass-web-f7.git",
         "requirejs":"2.1.20"
     }
 }
