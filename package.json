@@ -49,5 +49,5 @@
     "build": "bower install && gulp",
     "test": "gulp archive && mocha --reporter spec --timeout 5000"
   },
-  "version": "1.0.0"
+  "version": "0.0.1"
 }

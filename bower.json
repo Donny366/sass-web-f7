@@ -2,7 +2,7 @@
     "name": "sass-web",
     "version": "1.0.0",
     "name": "sass-web-f7",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "authors": [
         "xiaoming.gong <550843110@qq.com>"
     ],
@@ -23,7 +23,7 @@
         "tests"
     ],
     "devDependencies": {
-        "sass-f7":"https://github.com/AnyGong/sass-web-f7.git",
+        "sass-f7":"https://github.com/AnyGong/sass-f7.git",
         "requirejs":"2.1.20"
     }
 }
