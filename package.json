@@ -23,7 +23,7 @@
     "merge-stream": "^1.0.0",
     "mocha": "^2.2.4",
     "run-sequence": "^1.0.2",
-    "framework7":"1.2.0"
+    "framework7":"^1.2.0"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -34,19 +34,14 @@
       "dist": "dist",
       "src": "src",
       "test": "test"
-    },
-    "filename": {
-      "css": "sass-web-f7",
-      "js": "sass-web-f7"
     }
   },
   "author": "Any.Gong",
   "homepage": "https://github.com/AnyGong/sass-web-f7",
   "license": "MIT",
   "name": "sass-web-f7",
-  "private": true,
   "scripts": {
-    "build": "bower install && gulp",
+    "copy": "gulp init",
     "test": "gulp archive && mocha --reporter spec --timeout 5000"
   },
   "version": "0.0.1"

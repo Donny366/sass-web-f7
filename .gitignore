@@ -6,6 +6,7 @@ dist
 Framework7
 bower
 src/sass
+bower_components
 src/framework7/img
 src/framework7/js
 npm-debug.log
