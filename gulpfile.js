@@ -33,77 +33,107 @@ var time = {
     dateFormat: function () {
         return this.year.toString() + "_" + this.month.toString() + this.day.toString() + "_" + this.week + "_" + this.hours.toString() + this.minutes.toString() + this.seconds.toString()
     }
-}
+};
 var banner = '/**! Released: ' + time.dateFormat() + ' * Author: ' + pkg.author + '*/';
+
+// Dev Directory Configs
+var buildTime = time.dateFormat();
+var configs = {
+    pkg: {
+        app: require('./package.json'),
+        f7: require('./framework7/package.json')
+    },
+    src: {
+        app: 'app',
+        f7: 'framework7',
+        dist: 'dist'
+    }
+};
+var app = {
+    pkg: configs.pkg.app,
+    src: configs.src.app,
+    styles: configs.src.app + '/css',
+    sass: configs.src.app + '/sass',
+    scripts: configs.src.app + '/js',
+    images: configs.src.app + '/images',
+    f7: configs.src.app + '/f7',
+    dist: configs.src.dist,
+    archive: 'archive',
+    filename: configs.pkg.app.name,
+    banner: '/** version：' + configs.pkg.app.version + ' | time：' + buildTime + ' */\n'
+};
+var version = '2.0.0';
 
 // framework7 Tasks
 var f7 = {
-    scripts: dirs.src + '/framework7/js',
+    less: configs.src.f7 + '/less',
+    scripts: configs.src.f7 + '/js',
     filename: 'f7',
     jsFiles: [
-        './src/framework7/js/wrap-start.js',
-        './src/framework7/js/wrap-start.js',
-        './src/framework7/js/f7-intro.js',
-        './src/framework7/js/views.js',
-        './src/framework7/js/navbars.js',
-        './src/framework7/js/searchbar.js',
-        './src/framework7/js/messagebar.js',
-        './src/framework7/js/xhr.js',
-        './src/framework7/js/pages.js',
-        './src/framework7/js/router.js',
-        './src/framework7/js/modals.js',
-        './src/framework7/js/panels.js',
-        './src/framework7/js/lazy-load.js',
-        './src/framework7/js/material-preloader.js',
-        './src/framework7/js/messages.js',
-        './src/framework7/js/swipeout.js',
-        './src/framework7/js/sortable.js',
-        './src/framework7/js/smart-select.js',
-        './src/framework7/js/virtual-list.js',
-        './src/framework7/js/pull-to-refresh.js',
-        './src/framework7/js/infinite-scroll.js',
-        './src/framework7/js/scroll-toolbars.js',
-        './src/framework7/js/material-tabbar.js',
-        './src/framework7/js/tabs.js',
-        './src/framework7/js/accordion.js',
-        './src/framework7/js/fast-clicks.js',
-        './src/framework7/js/clicks.js',
-        './src/framework7/js/resize.js',
-        './src/framework7/js/forms-storage.js',
-        './src/framework7/js/forms-ajax.js',
-        './src/framework7/js/forms-textarea.js',
-        './src/framework7/js/material-inputs.js',
-        './src/framework7/js/push-state.js',
-        './src/framework7/js/swiper-init.js',
-        './src/framework7/js/photo-browser.js',
-        './src/framework7/js/picker.js',
-        './src/framework7/js/calendar.js',
-        './src/framework7/js/notifications.js',
-        './src/framework7/js/template7-templates.js',
-        './src/framework7/js/plugins.js',
-        './src/framework7/js/init.js',
-        './src/framework7/js/f7-outro.js',
-        './src/framework7/js/dom7-intro.js',
-        './src/framework7/js/dom7-methods.js',
-        './src/framework7/js/dom7-ajax.js',
-        './src/framework7/js/dom7-utils.js',
-        './src/framework7/js/dom7-outro.js',
-        './src/framework7/js/proto-support.js',
-        './src/framework7/js/proto-device.js',
-        './src/framework7/js/proto-plugins.js',
-        './src/framework7/js/template7.js',
-        './src/framework7/js/swiper.js',
-        './src/framework7/js/wrap-end.js'
+        './framework7/js/wrap-start.js',
+        './framework7/js/wrap-start.js',
+        './framework7/js/f7-intro.js',
+        './framework7/js/views.js',
+        './framework7/js/navbars.js',
+        './framework7/js/searchbar.js',
+        './framework7/js/messagebar.js',
+        './framework7/js/xhr.js',
+        './framework7/js/pages.js',
+        './framework7/js/router.js',
+        './framework7/js/modals.js',
+        './framework7/js/panels.js',
+        './framework7/js/lazy-load.js',
+        './framework7/js/material-preloader.js',
+        './framework7/js/messages.js',
+        './framework7/js/swipeout.js',
+        './framework7/js/sortable.js',
+        './framework7/js/smart-select.js',
+        './framework7/js/virtual-list.js',
+        './framework7/js/pull-to-refresh.js',
+        './framework7/js/infinite-scroll.js',
+        './framework7/js/scroll-toolbars.js',
+        './framework7/js/material-tabbar.js',
+        './framework7/js/tabs.js',
+        './framework7/js/accordion.js',
+        './framework7/js/fast-clicks.js',
+        './framework7/js/clicks.js',
+        './framework7/js/resize.js',
+        './framework7/js/forms-storage.js',
+        './framework7/js/forms-ajax.js',
+        './framework7/js/forms-textarea.js',
+        './framework7/js/material-inputs.js',
+        './framework7/js/push-state.js',
+        './framework7/js/swiper-init.js',
+        './framework7/js/photo-browser.js',
+        './framework7/js/picker.js',
+        './framework7/js/calendar.js',
+        './framework7/js/notifications.js',
+        './framework7/js/template7-templates.js',
+        './framework7/js/plugins.js',
+        './framework7/js/init.js',
+        './framework7/js/f7-outro.js',
+        './framework7/js/dom7-intro.js',
+        './framework7/js/dom7-methods.js',
+        './framework7/js/dom7-ajax.js',
+        './framework7/js/dom7-utils.js',
+        './framework7/js/dom7-outro.js',
+        './framework7/js/proto-support.js',
+        './framework7/js/proto-device.js',
+        './framework7/js/proto-plugins.js',
+        './framework7/js/template7.js',
+        './framework7/js/swiper.js',
+        './framework7/js/wrap-end.js'
     ],
-    modules: require('./src/framework7/modules.json'),
-    pkg: require('./node_modules/framework7/package.json'),
-    banner: '/** version：' + require('./node_modules/framework7/package.json').version + ' | time：' + time.dateFormat() + ' */\n',
-    customBanner: '/** version：' + require('./node_modules/framework7/package.json').version + ' | custom time：' + time.dateFormat() + ' */\n'
+    modules: require('./framework7/modules.json'),
+    pkg: require('./framework7/bower.json'),
+    banner: '/** version：' + configs.pkg.f7.version + ' | time：' + buildTime + ' */\n',
+    customBanner: '/** version：' + configs.pkg.f7.version + ' | custom time：' + buildTime + ' */\n',
+
 };
 function addJSIndent(file, t) {
     function addJSIndent(file, t) {
         var addIndent = '        ';
-        var filename = file.path.split('./src/framework7/js/')[1];
+        var filename = file.path.split('./framework7/js/')[1];
         if (filename === 'wrap-start.js' || filename === 'wrap-end.js') {
             addIndent = '';
         }
@@ -294,28 +324,21 @@ gulp.task('dist:misc', function () {
 // 复制依赖资源库文件
 
 gulp.task('copy:sass-f7', function () {
-    return gulp.src('bower/sass-f7/sass/**/*', {
+    return gulp.src('bower_components/sass-f7/sass/**/*', {
         dot: true
     }).pipe(gulp.dest(dirs.src + '/sass'))
 });
 
-gulp.task('copy:framework7-js', function () {
-    return gulp.src(['./node_modules/framework7/src/js/*'], {
+gulp.task('copy:framework7', function () {
+    return gulp.src(['./node_modules/framework7/src/**/*'], {
         dot: true
     })
-        .pipe(gulp.dest(dirs.src + '/framework7/js/'))
-});
-
-gulp.task('copy:framework7-img', function () {
-    return gulp.src(['./node_modules/framework7/src/img/*'], {
-        dot: true
-    })
-        .pipe(gulp.dest(dirs.src + '/framework7/img/'))
+        .pipe(gulp.dest('framework7/'))
 });
 
 
 gulp.task('copy:requirejs', function () {
-    return gulp.src('bower/requirejs/require.js', {
+    return gulp.src('bower_components/requirejs/require.js', {
         dot: true
     })
         .pipe(gulp.dest(dirs.src + '/js'))
@@ -324,7 +347,7 @@ gulp.task('copy:requirejs', function () {
 
 // 主任务
 
-gulp.task('init', ['copy:sass-f7', 'copy:framework7-js', 'copy:framework7-img', 'copy:requirejs']);
+gulp.task('init', ['copy:sass-f7', 'copy:framework7', 'copy:requirejs']);
 
 gulp.task('archive', function (done) {
     runSequence(['clean'],
