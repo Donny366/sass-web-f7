@@ -36,38 +36,10 @@ var time = {
 };
 var banner = '/**! Released: ' + time.dateFormat() + ' * Author: ' + pkg.author + '*/';
 
-// Dev Directory Configs
-var buildTime = time.dateFormat();
-var configs = {
-    pkg: {
-        app: require('./package.json'),
-        f7: require('./framework7/package.json')
-    },
-    src: {
-        app: 'app',
-        f7: 'framework7',
-        dist: 'dist'
-    }
-};
-var app = {
-    pkg: configs.pkg.app,
-    src: configs.src.app,
-    styles: configs.src.app + '/css',
-    sass: configs.src.app + '/sass',
-    scripts: configs.src.app + '/js',
-    images: configs.src.app + '/images',
-    f7: configs.src.app + '/f7',
-    dist: configs.src.dist,
-    archive: 'archive',
-    filename: configs.pkg.app.name,
-    banner: '/** version£º' + configs.pkg.app.version + ' | time£º' + buildTime + ' */\n'
-};
-var version = '2.0.0';
-
 // framework7 Tasks
 var f7 = {
-    less: configs.src.f7 + '/less',
-    scripts: configs.src.f7 + '/js',
+    less: './framework7/less',
+    scripts: './framework7/js',
     filename: 'f7',
     jsFiles: [
         './framework7/js/wrap-start.js',
